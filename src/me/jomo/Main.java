@@ -27,44 +27,117 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
+        int sword = 0;
+        int gauntlets = 0;
+        int spear = 0;
+        int lance = 0;
+        int orb = 0;
+        int katars = 0;
+        int scythe = 0;
+        int hammer = 0;
+        int axe = 0;
+        int greatSword = 0;
+        int cannon = 0;
+        int blasters = 0;
+        int bow = 0;
+
         System.out.println("Enter how much you like swords (1-10):");
-        int sword = Integer.parseInt(scanner.nextLine());
+        try {
+            sword = Integer.parseInt(scanner.nextLine());
+            if (sword < 1 || sword > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like gauntlets (1-10):");
-        int gauntlets = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like gauntlets (1-10):");
+            gauntlets = Integer.parseInt(scanner.nextLine());
+            if (gauntlets < 1 || gauntlets > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like spears (1-10):");
-        int spear = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like spears (1-10):");
+            spear = Integer.parseInt(scanner.nextLine());
+            if (spear < 1 || spear > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like lances (1-10):");
-        int lance = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like lances (1-10):");
+            lance = Integer.parseInt(scanner.nextLine());
+            if (lance < 1 || lance > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like orbs (1-10):");
-        int orb = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like orbs (1-10):");
+            orb = Integer.parseInt(scanner.nextLine());
+            if (orb < 1 || orb > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like katars (1-10):");
-        int katars = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like katars (1-10):");
+            katars = Integer.parseInt(scanner.nextLine());
+            if (katars < 1 || katars > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like scythes (1-10):");
-        int scythe = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like scythes (1-10):");
+            scythe = Integer.parseInt(scanner.nextLine());
+            if (scythe < 1 || scythe > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like hammers (1-10):");
-        int hammer = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like hammers (1-10):");
+            hammer = Integer.parseInt(scanner.nextLine());
+            if (hammer < 1 || hammer > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like axes (1-10):");
-        int axe = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like axes (1-10):");
+            axe = Integer.parseInt(scanner.nextLine());
+            if (axe < 1 || axe > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like great swords (1-10):");
-        int greatSword = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like great swords (1-10):");
+            greatSword = Integer.parseInt(scanner.nextLine());
+            if (greatSword < 1 || greatSword > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like cannons (1-10):");
-        int cannon = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like cannons (1-10):");
+            cannon = Integer.parseInt(scanner.nextLine());
+            if (cannon < 1 || cannon > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like blasters (1-10):");
-        int blasters = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like blasters (1-10):");
+            blasters = Integer.parseInt(scanner.nextLine());
+            if (blasters < 1 || blasters > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
 
-        System.out.println("Enter how much you like bows (1-10):");
-        int bow = Integer.parseInt(scanner.nextLine());
+            System.out.println("Enter how much you like bows (1-10):");
+            bow = Integer.parseInt(scanner.nextLine());
+            if (bow < 1 || bow > 10) {
+                System.out.println("You didn't enter a number between 1 and 10!");
+                return;
+            }
+
+        } catch (NumberFormatException ex) {
+            System.out.println("You didn't enter a number!");
+            return;
+        }
 
         List<Character> characterList = new ArrayList<>();
 
@@ -164,10 +237,11 @@ public class Main {
 
         });
 
-        for (int i = 0; i < 54; i++) {
-            //Max is 54 characters
+        System.out.println("Calculating your characters...");
+        System.out.println("Here are your top 10:");
+        for (int i = 0; i < 10; i++) { //The list that should be printed (Max is 54 characters)
             System.out.println(number + ". " + characterList.get(i).getName());
-            number ++;
+            number++;
         }
 
     }
