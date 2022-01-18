@@ -1,27 +1,10 @@
 package me.jomo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
-    // SOLVED If two characters have the same score, the one with the best worst weapon will come out ahead. Still sharing the position, but ahead.
-
-    /*Put numbers next to all the characters (allows some to be tied), example of how my list SHOULD be:
-    1. Val
-    2. Hattori
-    3. Wu Shang
-    4. Sir Roland
-    5. Orion
-    5. Petra
-    5. Asuri
-    8. Dusk
-    8. Caspian
-    8. Jiro
-    */
-
+    static int number = 1;
 
     static class Character {
 
@@ -43,19 +26,45 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sword = 1;
-        int gauntlets = 2;
-        int spear = 3;
-        int lance = 4;
-        int orb = 5;
-        int katars = 6;
-        int scythe = 7;
-        int hammer = 8;
-        int axe = 9;
-        int greatSword = 10;
-        int cannon = 11;
-        int blasters = 12;
-        int bow = 13;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter how much you like swords (1-10):");
+        int sword = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like gauntlets (1-10):");
+        int gauntlets = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like spears (1-10):");
+        int spear = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like lances (1-10):");
+        int lance = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like orbs (1-10):");
+        int orb = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like katars (1-10):");
+        int katars = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like scythes (1-10):");
+        int scythe = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like hammers (1-10):");
+        int hammer = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like axes (1-10):");
+        int axe = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like great swords (1-10):");
+        int greatSword = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like cannons (1-10):");
+        int cannon = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like blasters (1-10):");
+        int blasters = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Enter how much you like bows (1-10):");
+        int bow = Integer.parseInt(scanner.nextLine());
 
         List<Character> characterList = new ArrayList<>();
 
@@ -136,15 +145,15 @@ public class Main {
                     character2.lowestWeapon = character2.secondWeapon;
                 }
 
-                if (weaponScore1 < weaponScore2) {
+                if (weaponScore1 > weaponScore2) {
                     return -1;
                 }
 
                 if (weaponScore1 == weaponScore2) {
-                    if (character1.lowestWeapon < character2.lowestWeapon) {
+                    if (character1.lowestWeapon > character2.lowestWeapon) {
                         return 1;
                     }
-                    if (character1.lowestWeapon > character2.lowestWeapon) {
+                    if (character1.lowestWeapon < character2.lowestWeapon) {
                         return -1;
                     }
 
@@ -157,7 +166,8 @@ public class Main {
 
         for (int i = 0; i < 54; i++) {
             //Max is 54 characters
-            System.out.println(characterList.get(i).getName());
+            System.out.println(number + ". " + characterList.get(i).getName());
+            number ++;
         }
 
     }
